@@ -1,20 +1,24 @@
 import propTypes from 'prop-types';
 import css from './ContactList.module.css';
 
-export const ContactList = ({ contacts, handleDelete }) => {
+export const ContactList = ({ contacts, handleDelete }) => (
   <div className={css.contactListContainer}>
     <ul className={css.contactList}>
       {contacts.map((contact, id) => (
-        <li key={id}>
+        <li key={id} className={css.contactListItem}>
           {contact.name}: {contact.number}
-          <button type="button" onClick={() => handleDelete(contact.id)}>
+          <button
+            type="button"
+            className={css.contactItemBtn}
+            onClick={() => handleDelete(contact.id)}
+          >
             Delete
           </button>
         </li>
       ))}
     </ul>
-  </div>;
-};
+  </div>
+);
 
 ContactList.propTypes = {
   contacts: propTypes.arrayOf(
