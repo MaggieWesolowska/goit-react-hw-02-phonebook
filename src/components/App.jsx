@@ -66,7 +66,7 @@ export class App extends Component {
           justifyContent: 'center',
           alignItems: 'center',
           color: '#010101',
-          background: '#ddd',
+          background: '#D9DDDc',
           margin: 20,
           borderRadius: 5,
         }}
