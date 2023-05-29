@@ -2,10 +2,14 @@ import { Component } from 'react';
 import propTypes from 'prop-types';
 import css from './ContactForm.module.css';
 
+const INITIAL_STATE = {
+  name: '',
+  number: '',
+};
+
 export class ContactForm extends Component {
   state = {
-    name: '',
-    number: '',
+    ...INITIAL_STATE,
   };
 
   handleChange = e => {
@@ -17,7 +21,11 @@ export class ContactForm extends Component {
     e.preventDefault();
     const form = e.currentTarget;
     this.props.handleSubmit(this.state);
-    form.reset();
+    this.resetForm();
+  };
+
+  resetForm = () => {
+    this.setState({ ...INITIAL_STATE });
   };
 
   render() {
