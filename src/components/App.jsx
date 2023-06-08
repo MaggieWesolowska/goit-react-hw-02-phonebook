@@ -26,7 +26,11 @@ export class App extends Component {
       this.setState({ contacts: parsedContacts });
     }
   }
-
+  // componentDidUpdate(prevState) {
+  //   if (this.state.contacts !== prevState.contacts) {
+  //     localStorage.setItem('contactList', JSON.stringify(this.state.contacts));
+  //   }
+  // }
   componentDidUpdate() {
     localStorage.setItem('contactList', JSON.stringify(this.state.contacts));
   }
